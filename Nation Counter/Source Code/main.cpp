@@ -99,8 +99,13 @@ int main() {
 						sort(nations.begin(), nations.end());
 						cout << "Nations" << setw(15) << right << "Total: " << nationCount << endl;
 						cout << "-------------------------" << endl;
+						vector<string> nationVec;
 						for (string item : nations) {
-							cout << item << endl;
+							bool found = (count(nationVec.begin(), nationVec.end(), item) > 0);
+							if (!found) {
+								cout << item << endl;
+							}
+							nationVec.push_back(item);
 						}
 						cout << "-------------------------" << endl;
 
